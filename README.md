@@ -20,15 +20,24 @@ MongoDB provides an official Python driver called PyMongo :blush:
 Before we start, make sure that you have the PyMongo distribution installed.
 
 Python driver for MongoDB <http://www.mongodb.org>
->Installing PyMongo `pip install pymongo`
+>Installing PyMongo `>>> pip install pymongo`
 
 ## Making a Connection with MongoClient
-The first step when working with PyMongo is to create a MongoClient, to the running mongod instance
+The first step when working with PyMongo is to create a MongoClient, to the running mongod instance.
 
 ```
-import pymongo as p
-client = p.MongoClient('mongodb://localhost:27017/') # connect on the default host and port
-# We can also specify the host and port explicitly
+>>> import pymongo as p
+>>> client = p.MongoClient('mongodb://localhost:27017/') # connect on the default host and port
+>>> # We can also specify the host and port explicitly
+```
+The code above establishes a connection to the default host (localhost) and port (27017). MongoClient takes a set of arguments that allows you to specify custom host, port, and other connection parameters. For example, to provide a custom host and port, you can use the following code:
+
+```
+>>> client = p.MongoClient(host="localhost", port=27017)
+
+Or use the MongoDB URI format
+
+>>> client = p.MongoClient('mongodb://localhost:27017/')
 ```
 
 **let's write your python code with NoSQL** :grin:
